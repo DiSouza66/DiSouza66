@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<title>Jogo da Advinhação2</title>
+<link rel="stylesheet" href="jogo.css">
+<meta charset="UTF-8">
+<body align="center">
+    
+    <h1 align="center" id="jogo">JOGO DA ADVINHAÇÃO</h1>
+
+    <script style="text-align: center">
+        function pulaLinha() {
+
+            document.write("<br>");
+        }
+
+        function mostra(frase) {
+
+            document.write(frase);
+            pulaLinha();
+        }
+
+        function sorteia(n) {
+
+            return Math.round(Math.random() * n);
+            console.log();
+        }    
+
+        var numeroPensado = sorteia(10);
+        var chute = parseInt(prompt("Já pensei. Qual você acha que é?"));
+
+        
+        if(chute == numeroPensado) {
+
+            mostra("<h1 id='acertou'>ACERTOU!</h1>");            
+        } 
+            else {
+
+                if(chute > numeroPensado) {
+
+                    mostra("<h2 id='errou1'>ERROU! Seu chute é maior que o número pensado!</h2>");
+                    mostra("<h2 style='font-family:verdana;'>O Número Pensado foi:</h2>" + numeroPensado);
+
+                } 
+                else {
+
+                    mostra("<h2 id='errou2'>ERROU! Seu chute é menor que o número pensado!</h2>");
+                    mostra("<h2 style='font-family:verdana;'>O Número Pensado foi:</h2>" + numeroPensado);
+                }
+
+            }
+    </script>
+</body>
+</html>
